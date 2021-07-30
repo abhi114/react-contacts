@@ -1,12 +1,20 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TextInput } from 'react-native'
+import Container from '../../Components/common/Container'
+import Input from '../../Components/common/Input';
 
 const Login = () => {
+     const [value, onChangeText] = React.useState('Useless Text');
     return (
-        <View>
-            <Text>hi from login</Text>
-        </View>
-    )
+      <Container>
+
+        <Input
+          label = "Username"
+          onChangeText={onChangeText}
+          value={value}
+        />
+      </Container>
+    );
 }
 
 export default Login
