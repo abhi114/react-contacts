@@ -51,6 +51,9 @@ const RegisterComponent = ({onSubmit,onChange,form,errors}) => {
               //icon={<Text>HIDE</Text>}
               //error={"This field is required"}
               error={errors.lastName}
+              onChangeText={value => {
+                onChange({name: 'lastName', value});
+              }}
             />
             <Input
               label="Email"
@@ -59,6 +62,9 @@ const RegisterComponent = ({onSubmit,onChange,form,errors}) => {
               //icon={<Text>HIDE</Text>}
               //error={"This field is required"}
               error={errors.email}
+              onChangeText={value => {
+                onChange({name: 'email', value});
+              }}
             />
             <Input
               label="Password"
@@ -67,6 +73,9 @@ const RegisterComponent = ({onSubmit,onChange,form,errors}) => {
               iconPosition="right"
               placeholder="Enter Password"
               error={errors.password}
+              onChangeText={value => {
+                onChange({name: 'password', value});
+              }}
             />
             <CustomButton onPress={onSubmit} primary title="Submit" />
 
