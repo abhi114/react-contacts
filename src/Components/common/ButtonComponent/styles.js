@@ -4,15 +4,17 @@ import colors from "../../../assets/themes/colors";
 export default StyleSheet.create({
     wrapper:{
         height:42,
-        borderWidth:1,
-        borderRadius:4,
+        
         paddingHorizontal:5,
-        marginTop:5,
+        marginVertical:20,
+        borderRadius:4,
+        alignItems:"center",
+        justifyContent:"space-evenly"
     },
-    InputContainer:{
-        paddingVertical:12,
+    loaderSection:{
+        flexDirection:"row"
     },
-    textInput:{
+    textCustomButton:{
         flex:1,
         width:'100%',
     },
