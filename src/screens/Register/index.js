@@ -1,17 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { View, Text } from 'react-native'
 import RegisterComponent from '../../Components/SignUp'
 import envs from "../../config/env"
+import axiosInstance from '../../helpers/axiosInterceptor'
 const SignUp = () => {
     const [form,setForm] = useState({});
     const [errors, setErrors] = useState({});
-    const {BACKEND_URL} = envs;
-    console.log('BACKEND_URL',BACKEND_URL);
-    console.log('DEV', __DEV__);
+
+    console.log(form);
+    //const {BACKEND_URL} = envs;
+    //console.log('BACKEND_URL',BACKEND_URL);
+    //console.log('DEV', __DEV__);
 
     const onChange = ({name,value}) =>{
         //we have to change the form for the name input only
-        //setForm({...form,[name]:value})
+        setForm({...form,[name]:value})
 
         if(value!==''){
             if(name=='password'){
