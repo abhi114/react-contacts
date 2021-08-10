@@ -5,6 +5,7 @@ import CustomButton from '../../Components/common/ButtonComponent';
 import Container from '../../Components/common/Container';
 import Input from '../../Components/common/Input';
 import { LOGIN, REGISTER } from '../../Constants/routeNames';
+import Message from '../common/Message';
 import styles from './styles';
 const LoginComponent = () => {
     const {navigate} = useNavigation();
@@ -20,7 +21,18 @@ const LoginComponent = () => {
         <View>
           <Text style={styles.title}>Welcome to RN Contacts</Text>
           <Text style={styles.subTitle}>Please Login Here</Text>
-
+          <Message
+            retry
+            retryFn={() => {
+              console.log('hi');
+            }}
+            primary
+            onDismiss={() => {}}
+            message="invalid credentials"
+          />
+          <Message onDismiss={() => {}} danger message="invalid credentials" />
+          <Message onDismiss={() => {}} info message="invalid credentials" />
+          <Message onDismiss={() => {}} success message="invalid credentials" />
           <View style={styles.form}>
             <Input
               label="Username"
@@ -28,7 +40,6 @@ const LoginComponent = () => {
               placeholder="Enter Username"
               //icon={<Text>HIDE</Text>}
               //error={"This field is required"}
-              
             />
             <Input
               label="Password"
